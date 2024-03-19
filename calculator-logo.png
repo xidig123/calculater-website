@@ -7,13 +7,8 @@
     <meta name="description" content="Use our investment calculator to plan your financial future. Calculate the potential returns on your investments based on your initial investment, additional contributions, expected rate of return, and years of growth.">
     <meta name="keywords" content="investment calculator, financial planning, investment tool, expected rate of return, compound interest, retirement planning">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .logo {
-            width: 100px;
-            height: auto;
-            margin: 20px;
-        }
-    </style>
+    <!-- Add favicon -->
+    <link rel="icon" href="calculator-logo.png" type="image/png">
 </head>
 <body>
     <header>
