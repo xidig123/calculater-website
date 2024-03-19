@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6986221714574030"
-     crossorigin="anonymous"></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment Calculator - Calculate Your Financial Future</title>
@@ -12,7 +10,11 @@
     <style>
         footer {
             text-align: center;
-            margin-top: 20px; /* Add margin to the top of the footer */
+            margin-top: 20px;
+            margin-bottom: 20px; /* Add margin to the bottom of the footer */
+        }
+        .container {
+            margin-bottom: 20px; /* Add margin to the bottom of the container */
         }
     </style>
 </head>
@@ -21,51 +23,53 @@
         <h1>Investment Calculator</h1>
     </header>
     <main>
-        <div class="calculator">
-            <label for="initial-investment">Initial Investment:</label>
-            <input type="number" id="initial-investment" placeholder="Enter initial investment">
+        <div class="container"> <!-- Wrap sections in a container -->
+            <div class="calculator">
+                <label for="initial-investment">Initial Investment:</label>
+                <input type="number" id="initial-investment" placeholder="Enter initial investment">
 
-            <label for="additional-contribution">Additional Contribution:</label>
-            <input type="number" id="additional-contribution" placeholder="Enter additional contribution">
-            <select id="contribution-frequency">
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="yearly">Yearly</option>
-            </select>
+                <label for="additional-contribution">Additional Contribution:</label>
+                <input type="number" id="additional-contribution" placeholder="Enter additional contribution">
+                <select id="contribution-frequency">
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
 
-            <label for="years">Years of Growth:</label>
-            <input type="number" id="years" placeholder="Enter years of growth">
+                <label for="years">Years of Growth:</label>
+                <input type="number" id="years" placeholder="Enter years of growth">
 
-            <label for="expected-return">Expected Rate of Return (%):</label>
-            <input type="number" id="expected-return" placeholder="Enter expected rate of return">
+                <label for="expected-return">Expected Rate of Return (%):</label>
+                <input type="number" id="expected-return" placeholder="Enter expected rate of return">
 
-            <button id="calculate-btn">Calculate</button>
+                <button id="calculate-btn">Calculate</button>
 
-            <div id="result">
-                <h2>Results</h2>
-                <p>Starting Amount: <span id="starting-amount"></span></p>
-                <p>Total Contribution: <span id="total-contribution"></span></p>
-                <p>Total Amount: <span id="total-amount"></span></p>
+                <div id="result">
+                    <h2>Results</h2>
+                    <p>Starting Amount: <span id="starting-amount"></span></p>
+                    <p>Total Contribution: <span id="total-contribution"></span></p>
+                    <p>Total Amount: <span id="total-amount"></span></p>
+                </div>
             </div>
-        </div>
 
-        <!-- Updated Section: Investment Calculator - Plan Your Financial Future -->
-        <section>
-            <h2>Investment Calculator - Plan Your Financial Future</h2>
-            <p>
-                Welcome to our Investment Calculator, your go-to tool for planning your financial future with confidence. Whether you're saving for retirement, planning for a major purchase, or simply aiming to grow your wealth, our calculator empowers you to make informed decisions about your investments.
-            </p>
-            <h3>How It Works:</h3>
-            <p>
-                Using our Investment Calculator is simple. Just input your initial investment amount, any additional contributions, the number of years you plan to invest, and your expected rate of return. With the click of a button, you'll receive detailed insights into your investment's potential growth and total returns.
-            </p>
-            <h3>Why Use Our Calculator?</h3>
-            <ul>
-                <li>Comprehensive Analysis: Our calculator provides a comprehensive analysis of your investment, including compound interest calculations and projections.</li>
-                <li>Customizable Inputs: Tailor your inputs to match your unique financial situation, whether you're investing monthly, annually, or with a one-time contribution.</li>
-                <li>Plan Your Retirement: Determine how your investments can contribute to a secure retirement by visualizing potential savings growth over time.</li>
-            </ul>
-        </section>
+            <!-- Updated Section: Investment Calculator - Plan Your Financial Future -->
+            <section>
+                <h2>Investment Calculator - Plan Your Financial Future</h2>
+                <p>
+                    Welcome to our Investment Calculator, your go-to tool for planning your financial future with confidence. Whether you're saving for retirement, planning for a major purchase, or simply aiming to grow your wealth, our calculator empowers you to make informed decisions about your investments.
+                </p>
+                <h3>How It Works:</h3>
+                <p>
+                    Using our Investment Calculator is simple. Just input your initial investment amount, any additional contributions, the number of years you plan to invest, and your expected rate of return. With the click of a button, you'll receive detailed insights into your investment's potential growth and total returns.
+                </p>
+                <h3>Why Use Our Calculator?</h3>
+                <ul>
+                    <li>Comprehensive Analysis: Our calculator provides a comprehensive analysis of your investment, including compound interest calculations and projections.</li>
+                    <li>Customizable Inputs: Tailor your inputs to match your unique financial situation, whether you're investing monthly, annually, or with a one-time contribution.</li>
+                    <li>Plan Your Retirement: Determine how your investments can contribute to a secure retirement by visualizing potential savings growth over time.</li>
+                </ul>
+            </section>
+        </div>
     </main>
     <footer>
         <p>© 2024 Investment Calculator. All rights reserved.</p>
