@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Calculator</title>
+    <title>GPA Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Grade Calculator</h1>
-    <div class="grade-calculator">
-        <div class="course-row">
-            <div class="input-group">
-                <label for="course1">Course (optional)</label>
-                <input type="text" id="course1" class="course" placeholder="Course">
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        <div class="gpa-calculator">
+            <div class="course-headers">
+                <div class="header">Course Name (Optional)</div>
+                <div class="header">Credits</div>
+                <div class="header">Grade</div>
             </div>
-            <div class="input-group">
-                <label for="credits1">Credits</label>
-                <input type="number" id="credits1" class="credits" placeholder="Credits">
+            <div class="course-row">
+                <input type="text" class="course-name" placeholder="Course Name">
+                <input type="number" class="credits" placeholder="Credits">
+                <select class="grade">
+                    <option value="4.0">A</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C</option>
+                    <option value="1.7">C-</option>
+                    <option value="1.3">D+</option>
+                    <option value="1.0">D</option>
+                    <option value="0.0">F</option>
+                </select>
             </div>
-            <div class="input-group">
-                <label for="grade1">Grade</label>
-                <input type="text" id="grade1" class="grade" placeholder="Grade">
-            </div>
+            <!-- Additional course rows can be added dynamically -->
+            <button id="add-course">+ Add Course</button>
+            <button id="calculate">Calculate GPA</button>
         </div>
-        <!-- Add more course rows as needed -->
-        <button id="add-course">+ Add More Courses</button>
-        <button id="calculate">Calculate</button>
+        <div id="gpa-result" class="result"></div>
     </div>
-    <script src="grade_calculator.js"></script>
+    <script src="gpa_calculator.js"></script>
 </body>
 </html>
