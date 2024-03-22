@@ -1,50 +1,20 @@
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h1 {
+.container {
     text-align: center;
 }
 
-.grade-calculator {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.course-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.course {
     margin-bottom: 10px;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-}
-
-.input-group label {
-    margin-bottom: 5px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-
 button {
-    width: 100%;
-    padding: 8px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+    margin-top: 10px;
 }
