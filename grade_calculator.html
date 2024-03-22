@@ -10,11 +10,20 @@
     <h1>Grade Calculator</h1>
     <div class="grade-calculator">
         <div class="course-row">
-            <input type="text" class="course" placeholder="Course (optional)">
-            <input type="number" class="credits" placeholder="Credits">
-            <input type="text" class="grade" placeholder="Grade">
+            <div class="input-group">
+                <label for="course1">Course (optional)</label>
+                <input type="text" id="course1" class="course" placeholder="Course">
+            </div>
+            <div class="input-group">
+                <label for="credits1">Credits</label>
+                <input type="number" id="credits1" class="credits" placeholder="Credits">
+            </div>
+            <div class="input-group">
+                <label for="grade1">Grade</label>
+                <input type="text" id="grade1" class="grade" placeholder="Grade">
+            </div>
         </div>
-        <!-- Repeat the course row structure as needed -->
+        <!-- Add more course rows as needed -->
         <button id="add-course">+ Add More Courses</button>
         <button id="calculate">Calculate</button>
     </div>
