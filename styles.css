@@ -71,7 +71,27 @@ footer {
     width: 100%;
 }
 
+/* GPA Calculator Styles */
+.gpa-calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
 
+.gpa-calculator label,
+.gpa-calculator select {
+    display: block;
+    margin-bottom: 10px;
+}
 
+.gpa-calculator select {
+    width: calc(100% - 20px); /* Subtract padding */
+    padding: 8px;
+    border: 1px solid #ddd;
+}
 
-
+.gpa-calculator button {
+    width: 100%;
+}
