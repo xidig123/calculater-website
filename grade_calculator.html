@@ -5,37 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 0 auto;
+            width: 400px;
+            padding: 20px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .horizontal-line {
+            border-top: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>GPA Calculator</h1>
-        <table id="courses">
-            <tr>
-                <td><input type="text" placeholder="Course"></td>
-                <td><input type="number" placeholder="Credits"></td>
-                <td><input type="text" placeholder="Grade"></td>
-            </tr>
-            <tr>
-                <td><input type="text" placeholder="Course"></td>
-                <td><input type="number" placeholder="Credits"></td>
-                <td><input type="text" placeholder="Grade"></td>
-            </tr>
-            <tr>
-                <td><input type="text" placeholder="Course"></td>
-                <td><input type="number" placeholder="Credits"></td>
-                <td><input type="text" placeholder="Grade"></td>
-            </tr>
-            <tr>
-                <td><input type="text" placeholder="Course"></td>
-                <td><input type="number" placeholder="Credits"></td>
-                <td><input type="text" placeholder="Grade"></td>
-            </tr>
-            <tr>
-                <td><input type="text" placeholder="Course"></td>
-                <td><input type="number" placeholder="Credits"></td>
-                <td><input type="text" placeholder="Grade"></td>
-            </tr>
-        </table>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <input type="text" placeholder="Grade">
+        </div>
         <button id="calculate">Calculate GPA</button>
         <div id="result"></div>
     </div>
