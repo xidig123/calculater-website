@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Calculator - Calculate Your Financial Future</title>
-    <meta name="description" content="Use our investment calculator to plan your financial future. Calculate the potential returns on your investments based on your initial investment, additional contributions, expected rate of return, and years of growth.">
-    <meta name="keywords" content="investment calculator, financial planning, investment tool, expected rate of return, compound interest, retirement planning">
+    <title>GPA Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>        
-        <h1>Investment Calculator</h1>
-    </header>
-    <main>
-        <div class="calculator-links">
-            <h2>Financial Calculators:</h2>
-            <ul>
-                <li><a href="gpa_calculator.html">GPA Calculator</a></li>
-                <li><a href="grade_calculator.html">Grade Calculator</a></li>
-                <!-- Add links for other calculators -->
-            </ul>
+    <h1>GPA Calculator</h1>
+    <div class="gpa-calculator">
+        <div class="course-row">
+            <div class="input-group">
+                <label for="course1">Course Name</label>
+                <input type="text" id="course1" class="course" placeholder="Course Name">
+            </div>
+            <div class="input-group">
+                <label for="credits1">Credits</label>
+                <input type="number" id="credits1" class="credits" placeholder="Credits">
+            </div>
+            <div class="input-group">
+                <label for="grade1">Grade</label>
+                <select id="grade1" class="grade">
+                    <option value="4.0">A</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C</option>
+                    <option value="1.7">C-</option>
+                    <option value="1.3">D+</option>
+                    <option value="1.0">D</option>
+                    <option value="0.0">F</option>
+                </select>
+            </div>
         </div>
-
-        <div class="calculator">
-            <!-- Investment calculator content -->
-        </div>
-    </main>
-    
-    <!-- Other sections -->
-    
-    <footer>
-        <p>© 2024 Investment Calculator. All rights reserved.</p>
-    </footer>
+        <!-- Add more course rows as needed -->
+        <button id="add-course">+ Add More Courses</button>
+        <button id="calculate">Calculate GPA</button>
+    </div>
+    <script src="gpa_calculator.js"></script>
 </body>
 </html>
+
