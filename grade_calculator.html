@@ -9,13 +9,8 @@
 <body>
     <div class="container">
         <h1>GPA Calculator</h1>
-        <div class="gpa-calculator">
-            <div class="course-headers">
-                <div class="header">Course Name (Optional)</div>
-                <div class="header">Credits</div>
-                <div class="header">Grade</div>
-            </div>
-            <div class="course-row">
+        <div id="courses">
+            <div class="course">
                 <input type="text" class="course-name" placeholder="Course Name">
                 <input type="number" class="credits" placeholder="Credits">
                 <select class="grade">
@@ -32,11 +27,10 @@
                     <option value="0.0">F</option>
                 </select>
             </div>
-            <!-- Additional course rows can be added dynamically -->
-            <button id="add-course">+ Add Course</button>
-            <button id="calculate">Calculate GPA</button>
         </div>
-        <div id="gpa-result" class="result"></div>
+        <button id="add-course">Add Course</button>
+        <button id="calculate">Calculate GPA</button>
+        <div id="result"></div>
     </div>
     <script src="gpa_calculator.js"></script>
 </body>
