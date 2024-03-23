@@ -1,120 +1,102 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Add event listener for the Calculate GPA button
-    document.getElementById("calculate").addEventListener("click", calculateGPA);
+    const addButton = document.getElementById("add-row");
+    const calculateButton = document.getElementById("calculate");
+    const resultDiv = document.getElementById("result");
+    let rowCount = 5; // Initial number of rows
 
-    // Add event listener for the Add Row button
-    document.getElementById("add-row").addEventListener("click", addRow);
-});
+    addButton.addEventListener("click", function() {
+        addRow();
+    });
 
-// Function to calculate GPA
-function calculateGPA() {
-    // Get all input elements for course name, grade, and credits
-    const courseNames = document.querySelectorAll('input[type="text"]');
-    const grades = document.querySelectorAll('select');
-    const credits = document.querySelectorAll('input[type="number"]');
+    calculateButton.addEventListener("click", function() {
+        calculateGPA();
+    });
 
-    let totalGradePoints = 0;
-    let totalCredits = 0;
+    // Function to add a new row
+    function addRow() {
+        const container = document.createElement("div");
+        container.classList.add("input-group");
 
-    // Iterate over each course and calculate grade points
-    for (let i = 0; i < courseNames.length; i++) {
-        const grade = grades[i].value;
-        const credit = parseInt(credits[i].value);
+        container.innerHTML = `
+            <input type="text" placeholder="Course Name">
+            <select>
+                <option value="A+">A+</option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option>
+                <option value="P">P</option>
+                <option value="NP">NP</option>
+            </select>
+            <input type="number" placeholder="Credits">
+        `;
 
-        // Calculate grade points for each course
-        let gradePoints = 0;
-        switch (grade) {
-            case "A+":
-                gradePoints = 4.0;
-                break;
-            case "A":
-                gradePoints = 4.0;
-                break;
-            case "A-":
-                gradePoints = 3.7;
-                break;
-            case "B+":
-                gradePoints = 3.3;
-                break;
-            case "B":
-                gradePoints = 3.0;
-                break;
-            case "B-":
-                gradePoints = 2.7;
-                break;
-            case "C+":
-                gradePoints = 2.3;
-                break;
-            case "C":
-                gradePoints = 2.0;
-                break;
-            case "C-":
-                gradePoints = 1.7;
-                break;
-            case "D+":
-                gradePoints = 1.3;
-                break;
-            case "D":
-                gradePoints = 1.0;
-                break;
-            case "D-":
-                gradePoints = 0.7;
-                break;
-            case "F":
-                gradePoints = 0;
-                break;
-            case "P":
-                gradePoints = 0; // Assuming Pass doesn't contribute to GPA
-                break;
-            case "NP":
-                gradePoints = 0; // Assuming No Pass doesn't contribute to GPA
-                break;
-            default:
-                gradePoints = 0; // Assuming any other value doesn't contribute to GPA
-                break;
-        }
-
-        // Calculate total grade points and credits
-        totalGradePoints += gradePoints * credit;
-        totalCredits += credit;
+        document.querySelector(".horizontal-line").before(container);
+        rowCount++;
     }
 
-    // Calculate GPA
-    const GPA = totalGradePoints / totalCredits;
+    // Function to calculate GPA
+    function calculateGPA() {
+        let totalGradePoints = 0;
+        let totalCredits = 0;
 
-    // Display the result
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = "<h2>Your GPA is: " + GPA.toFixed(2) + "</h2>";
-}
+        for (let i = 0; i < rowCount; i++) {
+            const grade = document.querySelectorAll(".input-group select")[i].value;
+            const credits = parseFloat(document.querySelectorAll(".input-group input[type='number']")[i].value);
 
-// Function to add a new row for another course
-function addRow() {
-    // Create HTML elements for new row
-    const newRow = document.createElement("div");
-    newRow.classList.add("input-group");
-    newRow.innerHTML = `
-        <input type="text" placeholder="Course Name">
-        <select>
-            <option value="A+">A+</option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D+">D+</option>
-            <option value="D">D</option>
-            <option value="D-">D-</option>
-            <option value="F">F</option>
-            <option value="P">P</option>
-            <option value="NP">NP</option>
-        </select>
-        <input type="number" placeholder="Credits">
-    `;
+            if (!isNaN(credits)) {
+                totalCredits += credits;
+                totalGradePoints += calculateGradePoint(grade) * credits;
+            }
+        }
 
-    // Insert the new row before the Add Row button
-    const addRowButton = document.getElementById("add-row");
-    addRowButton.parentNode.insertBefore(newRow, addRowButton);
-}
+        const gpa = totalGradePoints / totalCredits;
+        resultDiv.textContent = `Your GPA is: ${gpa.toFixed(2)}`;
+    }
+
+    // Function to calculate grade points based on letter grade
+    function calculateGradePoint(grade) {
+        switch (grade) {
+            case "A+":
+                return 4.0;
+            case "A":
+                return 4.0;
+            case "A-":
+                return 3.7;
+            case "B+":
+                return 3.3;
+            case "B":
+                return 3.0;
+            case "B-":
+                return 2.7;
+            case "C+":
+                return 2.3;
+            case "C":
+                return 2.0;
+            case "C-":
+                return 1.7;
+            case "D+":
+                return 1.3;
+            case "D":
+                return 1.0;
+            case "D-":
+                return 0.7;
+            case "F":
+                return 0.0;
+            case "P":
+                return 0.0; // Assuming P represents pass without affecting GPA
+            case "NP":
+                return 0.0; // Assuming NP represents no pass without affecting GPA
+            default:
+                return 0.0;
+        }
+    }
+});
