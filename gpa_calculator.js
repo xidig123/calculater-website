@@ -1,94 +1,50 @@
-// Function to calculate the quality points based on the grade
-function calculateQualityPoints(grade) {
-    switch (grade) {
-        case "A+":
-            return 4.0;
-        case "A":
-            return 4.0;
-        case "A-":
-            return 3.7;
-        case "B+":
-            return 3.3;
-        case "B":
-            return 3.0;
-        case "B-":
-            return 2.7;
-        case "C+":
-            return 2.3;
-        case "C":
-            return 2.0;
-        case "C-":
-            return 1.7;
-        case "D+":
-            return 1.3;
-        case "D":
-            return 1.0;
-        case "D-":
-            return 0.7;
-        case "F":
-            return 0.0;
-        case "P":
-            return 0.0; // Assuming P has no quality points
-        case "NP":
-            return 0.0; // Assuming NP has no quality points
-        default:
-            return 0.0; // Default case for unknown grades
-    }
-}
-
-// Function to calculate GPA
-function calculateGPA() {
+document.getElementById('calculate').addEventListener('click', function() {
     var courses = document.querySelectorAll('.input-group');
     var totalCredits = 0;
-    var totalQualityPoints = 0;
+    var totalGradePoints = 0;
 
-    courses.forEach(course => {
-        var credits = parseInt(course.querySelector('input[type="number"]').value);
-        var grade = course.querySelector('select').value;
+    courses.forEach(function(course) {
+        var credits = parseFloat(course.querySelector('#credits').value);
+        var grade = parseFloat(course.querySelector('#grade').value);
 
-        if (!isNaN(credits)) {
+        if (!isNaN(credits) && !isNaN(grade)) {
             totalCredits += credits;
-            totalQualityPoints += calculateQualityPoints(grade) * credits;
+            totalGradePoints += credits * grade;
         }
     });
 
-    if (totalCredits === 0) {
-        document.getElementById('result').textContent = "Please add at least one course with valid credits.";
+    var gpa = totalGradePoints / totalCredits;
+    if (!isNaN(gpa)) {
+        document.getElementById('result').innerText = 'Your GPA is: ' + gpa.toFixed(2);
     } else {
-        var gpa = totalQualityPoints / totalCredits;
-        document.getElementById('result').textContent = 'Your GPA is: ' + gpa.toFixed(2);
+        document.getElementById('result').innerText = 'Please enter valid data for all courses.';
     }
-}
+});
 
-// Function to add a new row
-function addRow() {
-    var container = document.getElementById('container');
-    var newRow = document.createElement('div');
-    newRow.classList.add('input-group');
-    newRow.innerHTML = `
-        <input type="text" placeholder="Course Name">
-        <input type="number" placeholder="Credits">
-        <select>
-            <option value="A+">A+</option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D+">D+</option>
-            <option value="D">D</option>
-            <option value="D-">D-</option>
-            <option value="F">F</option>
-            <option value="P">P</option>
-            <option value="NP">NP</option>
+document.getElementById('add-row').addEventListener('click', function() {
+    var container = document.querySelector('.container');
+    var inputGroup = document.createElement('div');
+    inputGroup.classList.add('input-group');
+    inputGroup.innerHTML = `
+        <label for="course">Course</label>
+        <input type="text" id="course" placeholder="Course Name">
+        <label for="credits">Credits</label>
+        <input type="number" id="credits" placeholder="Credits">
+        <label for="grade">Grade</label>
+        <select id="grade">
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.7">C-</option>
+            <option value="1.3">D+</option>
+            <option value="1.0">D</option>
+            <option value="0.7">D-</option>
+            <option value="0">F</option>
         </select>
     `;
-    container.appendChild(newRow);
-}
-
-// Event listeners
-document.getElementById('add-row').addEventListener('click', addRow);
-document.getElementById('calculate').addEventListener('click', calculateGPA);
+    container.insertBefore(inputGroup, document.getElementById('add-row'));
+});
