@@ -1,53 +1,45 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .container {
+    margin: 0 auto;
     width: 400px;
-    margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-}
-
-.row {
+.input-group {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
-input[type="text"], input[type="number"], select {
-    width: 100%;
-    padding: 8px;
+.input-group input[type="number"] {
+    width: 100px;
+    padding: 5px;
     margin-right: 10px;
-    box-sizing: border-box;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+.horizontal-line {
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+#add-row {
     background-color: #4CAF50;
-    color: #fff;
+    color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
-    margin-top: 20px;
-    text-align: center;
+    margin-bottom: 10px;
 }
