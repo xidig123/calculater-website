@@ -2,21 +2,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .container {
     width: 300px;
-    text-align: center;
+    margin: 50px auto;
     position: relative;
 }
 
 .vertical-line {
-    border-left: 1px solid #000;
-    height: 200px;
+    border-left: 2px solid #333;
+    height: 150px;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -27,18 +23,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .input-group input, .input-group select {
     width: 30%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .horizontal-line {
-    border-top: 1px solid #000;
-    margin: 10px 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
 }
 
 button {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
