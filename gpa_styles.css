@@ -5,55 +5,51 @@ body {
     background-color: #f7f7f7;
 }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    padding: 20px;
-}
-
-h2 {
+header {
+    background-color: #333;
+    color: white;
     text-align: center;
+    padding: 20px 0;
 }
 
-.table {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+h1 {
+    margin: 0;
 }
 
-.row {
-    display: table-row;
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
 }
 
-.cell {
-    display: table-cell;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-.cell.title {
+.calculator-links {
     background-color: #f0f0f0;
-    font-weight: bold;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 20px;
 }
 
-.cell:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.cell:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.input-group {
+    margin-bottom: 10px;
 }
 
-.button-container {
-    text-align: center;
-    margin-bottom: 20px;
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -78,6 +74,6 @@ button:hover {
 
 footer {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
     color: #888;
 }
