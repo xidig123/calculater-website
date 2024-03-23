@@ -4,20 +4,25 @@ body {
     padding: 0;
 }
 
-.container {
-    width: 80%;
+.outer-box {
+    width: 70%;
     margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.container {
+    margin-bottom: 20px;
 }
 
 .table-box {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.table-header {
+.table-header, .table-row {
     display: flex;
-    background-color: #f2f2f2;
     border-bottom: 1px solid #ccc;
 }
 
@@ -25,11 +30,6 @@ body {
     flex: 1;
     padding: 10px;
     text-align: center;
-}
-
-.table-row {
-    display: flex;
-    border-bottom: 1px solid #ccc;
 }
 
 .table-row input, .table-row select {
@@ -40,9 +40,7 @@ body {
 
 button {
     display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -59,4 +57,9 @@ button:hover {
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }
