@@ -1,63 +1,52 @@
+/* styles.css */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
-
-.container {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    margin-bottom: 20px;
+header, footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    color: #333;
+    padding: 10px 0;
 }
-
-.course {
+.container {
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.input-group {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
 }
-
-input[type="text"],
-input[type="number"],
-select {
-    width: 30%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input-group h3 {
+    flex-basis: 30%;
 }
-
-button {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 10px;
+.input-group input[type="text"],
+.input-group select {
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+}
+.input-group input[type="text"]:first-child {
+    width: 150px;
+}
+.horizontal-line {
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+#add-row, #calculate {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
-
-button:hover {
-    background-color: #0056b3;
-}
-
 #result {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    margin-top: 10px;
 }
