@@ -92,3 +92,4 @@ function addRow() {
 // Event listeners
 document.getElementById('add-row').addEventListener('click', addRow);
 document.getElementById('calculate').addEventListener('click', calculateGPA);
+
