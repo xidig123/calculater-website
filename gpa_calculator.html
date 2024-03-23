@@ -7,35 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>GPA Calculator</h1>
-        <div id="form">
-            <div class="row">
-                <input type="text" placeholder="Course (optional)" class="course">
-                <input type="text" placeholder="Credits" class="credits">
-                <select class="grade">
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C">C</option>
-                    <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D">D</option>
-                    <option value="D-">D-</option>
-                    <option value="F">F</option>
-                    <option value="P">P</option>
-                    <option value="NP">NP</option>
-                </select>
-            </div>
+    </header>
+    <div class="container" id="container">
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" placeholder="Credits">
+            <select>
+                <option value="A+">A+</option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option>
+                <option value="P">P</option>
+                <option value="NP">NP</option>
+            </select>
         </div>
-        <button id="add-row">Add Row</button>
-        <button id="calculate">Calculate GPA</button>
-        <div id="result"></div>
     </div>
-    <script src="gpa_calculator.js"></script>
+    <button id="add-row">Add Row</button>
+    <button id="calculate">Calculate GPA</button>
+    <div id="result"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
