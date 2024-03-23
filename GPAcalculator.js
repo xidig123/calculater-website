@@ -1,11 +1,12 @@
-// JavaScript (gpa_calculator.js)
-document.getElementById('add-row').addEventListener('click', function() {
-    var rows = document.getElementById('rows');
-    var newRow = document.createElement('div');
-    newRow.classList.add('input-group');
-    newRow.innerHTML = `
+// gpa_calculator.js
+
+// Function to add a new row
+function addRow() {
+    var row = document.createElement('div');
+    row.classList.add('input-group');
+    row.innerHTML = `
         <input type="text" placeholder="Course Name">
-        <input type="number" placeholder="Credits">
+        <input type="number" placeholder="Credits" disabled>
         <select>
             <option value="A+">A+</option>
             <option value="A">A</option>
@@ -22,31 +23,69 @@ document.getElementById('add-row').addEventListener('click', function() {
             <option value="F">F</option>
             <option value="P">P</option>
             <option value="NP">NP</option>
-        </select>`;
-    rows.appendChild(newRow);
-});
+        </select>
+    `;
+    document.getElementById('rows').appendChild(row);
+}
 
-document.getElementById('calculate').addEventListener('click', function() {
-    var courseNames = document.querySelectorAll('input[type="text"]');
-    var credits = document.querySelectorAll('input[type="number"]');
-    var grades = document.querySelectorAll('select');
-
+// Function to calculate GPA
+function calculateGPA() {
+    var courses = document.querySelectorAll('.input-group');
     var totalCredits = 0;
-    var totalGradePoints = 0;
+    var totalQualityPoints = 0;
 
-    for (var i = 0; i < credits.length; i++) {
-        var credit = parseFloat(credits[i].value);
-        var grade = parseFloat(grades[i].value);
-        if (!isNaN(credit) && !isNaN(grade)) {
-            totalCredits += credit;
-            totalGradePoints += credit * grade;
+    courses.forEach(course => {
+        var credits = parseInt(course.querySelector('input[type="number"]').value);
+        var grade = course.querySelector('select').value;
+
+        if (!isNaN(credits)) {
+            totalCredits += credits;
+            totalQualityPoints += calculateQualityPoints(grade) * credits;
         }
-    }
+    });
 
-    var gpa = totalGradePoints / totalCredits;
-    if (!isNaN(gpa)) {
-        document.getElementById('result').innerHTML = '<p>Your GPA is: ' + gpa.toFixed(2) + '</p>';
-    } else {
-        document.getElementById('result').innerHTML = '<p>Please enter valid credits and grades.</p>';
+    var gpa = totalQualityPoints / totalCredits;
+    document.getElementById('result').textContent = 'Your GPA is: ' + gpa.toFixed(2);
+}
+
+// Function to calculate quality points based on grade
+function calculateQualityPoints(grade) {
+    switch (grade) {
+        case 'A+':
+            return 4.3;
+        case 'A':
+            return 4.0;
+        case 'A-':
+            return 3.7;
+        case 'B+':
+            return 3.3;
+        case 'B':
+            return 3.0;
+        case 'B-':
+            return 2.7;
+        case 'C+':
+            return 2.3;
+        case 'C':
+            return 2.0;
+        case 'C-':
+            return 1.7;
+        case 'D+':
+            return 1.3;
+        case 'D':
+            return 1.0;
+        case 'D-':
+            return 0.7;
+        case 'F':
+            return 0.0;
+        case 'P':
+            return -1; // Pass, not counted towards GPA
+        case 'NP':
+            return -1; // No Pass, not counted towards GPA
+        default:
+            return 0;
     }
-});
+}
+
+// Event listeners
+document.getElementById('add-row').addEventListener('click', addRow);
+document.getElementById('calculate').addEventListener('click', calculateGPA);
