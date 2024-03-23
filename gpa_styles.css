@@ -5,42 +5,44 @@ body {
 }
 
 .container {
-    width: 300px;
+    width: 80%;
     margin: 50px auto;
-    position: relative;
 }
 
-.vertical-line {
-    border-left: 2px solid #333;
-    height: 150px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.input-group input, .input-group select {
-    width: 30%;
-    padding: 8px;
+.table-box {
     border: 1px solid #ccc;
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.horizontal-line {
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
+.table-header {
+    display: flex;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.table-row input, .table-row select {
+    flex: 1;
+    padding: 10px;
+    border: none;
 }
 
 button {
     display: block;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
