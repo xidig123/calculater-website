@@ -1,97 +1,52 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const addButton = document.getElementById("add-row");
-    const calculateButton = document.getElementById("calculate");
-    const resultDiv = document.getElementById("result");
-    let rowCount = 1; // Initial number of rows
+// JavaScript (gpa_calculator.js)
+document.getElementById('add-row').addEventListener('click', function() {
+    var rows = document.getElementById('rows');
+    var newRow = document.createElement('div');
+    newRow.classList.add('input-group');
+    newRow.innerHTML = `
+        <input type="text" placeholder="Course Name">
+        <input type="number" placeholder="Credits">
+        <select>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="D-">D-</option>
+            <option value="F">F</option>
+            <option value="P">P</option>
+            <option value="NP">NP</option>
+        </select>`;
+    rows.appendChild(newRow);
+});
 
-    addButton.addEventListener("click", function() {
-        addRow();
-    });
+document.getElementById('calculate').addEventListener('click', function() {
+    var courseNames = document.querySelectorAll('input[type="text"]');
+    var credits = document.querySelectorAll('input[type="number"]');
+    var grades = document.querySelectorAll('select');
 
-    calculateButton.addEventListener("click", function() {
-        calculateGPA();
-    });
+    var totalCredits = 0;
+    var totalGradePoints = 0;
 
-    // Function to add a new row
-    function addRow() {
-        const container = document.createElement("div");
-        container.classList.add("input-group");
-
-        container.innerHTML = `
-            <input type="text" placeholder="Course Name">
-            <select>
-                <option value="A+">A+</option>
-                <option value="A">A</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B">B</option>
-                <option value="B-">B-</option>
-                <option value="C+">C+</option>
-                <option value="C">C</option>
-                <option value="C-">C-</option>
-                <option value="D+">D+</option>
-                <option value="D">D</option>
-                <option value="D-">D-</option>
-                <option value="F">F</option>
-                <option value="P">P</option>
-                <option value="NP">NP</option>
-            </select>
-            <input type="number" placeholder="Credits">
-        `;
-
-        document.querySelector(".horizontal-line").before(container);
-        rowCount++;
-    }
-
-    // Function to calculate GPA
-    function calculateGPA() {
-        let totalGradePoints = 0;
-        let totalCredits = 0;
-
-        for (let i = 0; i < rowCount; i++) {
-            const grade = document.querySelectorAll(".input-group select")[i].value;
-            const credits = parseFloat(document.querySelectorAll(".input-group input[type='number']")[i].value);
-
-            if (!isNaN(credits)) {
-                totalCredits += credits;
-                totalGradePoints += calculateGradePoint(grade) * credits;
-            }
+    for (var i = 0; i < credits.length; i++) {
+        var credit = parseFloat(credits[i].value);
+        var grade = parseFloat(grades[i].value);
+        if (!isNaN(credit) && !isNaN(grade)) {
+            totalCredits += credit;
+            totalGradePoints += credit * grade;
         }
-
-        const gpa = totalGradePoints / totalCredits;
-        resultDiv.textContent = `Your GPA is: ${gpa.toFixed(2)}`;
     }
 
-    // Function to calculate grade points based on letter grade
-    function calculateGradePoint(grade) {
-        switch (grade) {
-            case "A+":
-                return 4.0;
-            case "A":
-                return 4.0;
-            case "A-":
-                return 3.7;
-            case "B+":
-                return 3.3;
-            case "B":
-                return 3.0;
-            case "B-":
-                return 2.7;
-            case "C+":
-                return 2.3;
-            case "C":
-                return 2.0;
-            case "C-":
-                return 1.7;
-            case "D+":
-                return 1.3;
-            case "D":
-                return 1.0;
-            case "D-":
-                return 0.7;
-            case "F":
-                return 0.0;
-            case "P":
-                return 0.0; // Assuming P represents pass without affecting GPA
-            case "NP":
-               
+    var gpa = totalGradePoints / totalCredits;
+    if (!isNaN(gpa)) {
+        document.getElementById('result').innerHTML = '<p>Your GPA is: ' + gpa.toFixed(2) + '</p>';
+    } else {
+        document.getElementById('result').innerHTML = '<p>Please enter valid credits and grades.</p>';
+    }
+});
