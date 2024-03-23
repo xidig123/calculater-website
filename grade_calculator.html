@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            margin: 0 auto;
+            width: 400px;
+            padding: 20px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .horizontal-line {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        #add-row {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,26 +58,33 @@
         </div>
         <div class="input-group">
             <input type="text" placeholder="Course Name">
-            <select>
-                <option value="A+">A+</option>
-                <option value="A">A</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B">B</option>
-                <option value="B-">B-</option>
-                <option value="C+">C+</option>
-                <option value="C">C</option>
-                <option value="C-">C-</option>
-                <option value="D+">D+</option>
-                <option value="D">D</option>
-                <option value="D-">D-</option>
-                <option value="F">F</option>
-                <option value="P">P</option>
-                <option value="NP">NP</option>
-            </select>
-            <input type="number" placeholder="Credits">
+            <input type="number" value="3">
+            <input type="text" placeholder="Grade">
         </div>
         <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" value="3">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" value="3">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" value="3">
+            <input type="text" placeholder="Grade">
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="input-group">
+            <input type="text" placeholder="Course Name">
+            <input type="number" value="3">
+            <input type="text" placeholder="Grade">
+        </div>
         <button id="add-row">Add Row</button>
         <button id="calculate">Calculate GPA</button>
         <div id="result"></div>
@@ -45,6 +92,5 @@
     <footer>
         <p>&copy; 2024 GPA Calculator. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
