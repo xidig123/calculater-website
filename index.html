@@ -1,140 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6986221714574030" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Calculator - Calculate Your Financial Future</title>
-    <meta name="description" content="Use our investment calculator to plan your financial future. Calculate the potential returns on your investments based on your initial investment, additional contributions, expected rate of return, and years of growth.">
-    <meta name="keywords" content="investment calculator, financial planning, investment tool, expected rate of return, compound interest, retirement planning">
-    <link rel="stylesheet" href="styles.css">
+    <title>GPA Calculator</title>
     <style>
-        footer {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            margin-top: 35px; /* Increase the margin to create more space */
+            padding: 10px 0;
         }
-        section {
-            margin-bottom: 50px;
-        }
-        /* Add margin-bottom to the last section */
-        section:last-child {
-            margin-bottom: 80px; /* Adjust the value as needed */
-        }
-        .calculator-links {
-            background-color: #f0f0f0;
+        .container {
+            margin: 0 auto;
+            width: 400px;
             padding: 20px;
-            border-radius: 5px;
-            float: left;
-            width: 250px; /* Set the width for the left column */
-            margin-right: 20px;
         }
-        .calculator {
-            float: left;
-            width: calc(100% - 300px); /* Set the width for the right column */
-            margin-bottom: 50px; /* Add margin to separate from the section below */
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
-        /* Clearfix to prevent overlapping */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
+        .input-group input[type="text"] {
+            width: 150px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .input-group select {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .horizontal-line {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        #add-row, #calculate {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        #result {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <header>        
-        <h1>Investment Calculator</h1>
+    <header>
+        <h1>GPA Calculator</h1>
     </header>
-    <main class="clearfix">
-        <div class="calculator-links">
-            <h2>Financial Calculators:</h2>
-            <ul>
-                <li><a href="gpa_calculator.html">GPA Calculator</a></li>
-                <li><a href="grade_calculator.html">Grade Calculator</a></li>
-                <li><a href="loan_calculator.html">Loan Calculator</a></li>
-                <li><a href="car_loan_calculator.html">Car Loan Calculator</a></li>
-                <li><a href="auto_loan_calculator.html">Auto Loan Calculator</a></li>
-                <li><a href="mortgage_calculator.html">Mortgage Calculator</a></li>
-                <li><a href="mortgage_payment_calculator.html">Mortgage Payment Calculator</a></li>
-                <li><a href="amortization_calculator.html">Amortization Calculator</a></li>
-                <li><a href="salary_calculator.html">Salary Calculator</a></li>
-                <li><a href="loan_payment_calculator.html">Loan Payment Calculator</a></li>
-                <li><a href="personal_loan_calculator.html">Personal Loan Calculator</a></li>
-                <li><a href="home_loan_calculator.html">Home Loan Calculator</a></li>
-                <li><a href="interest_calculator.html">Interest Calculator</a></li>
-                <li><a href="bmr_calculator.html">BMR Calculator</a></li>
-            </ul>
+    <div class="container">
+        <div class="input-group">
+            <h3>Course</h3>
+            <h3>Credits</h3>
+            <h3>Grade</h3>
         </div>
-
-        <div class="calculator">
-            <label for="initial-investment">Initial Investment:</label>
-            <input type="number" id="initial-investment" placeholder="Enter initial investment">
-
-            <label for="additional-contribution">Additional Contribution:</label>
-            <input type="number" id="additional-contribution" placeholder="Enter additional contribution">
-            <select id="contribution-frequency">
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="yearly">Yearly</option>
-            </select>
-
-            <label for="years">Years of Growth:</label>
-            <input type="number" id="years" placeholder="Enter years of growth">
-
-            <label for="expected-return">Expected Rate of Return (%):</label>
-            <input type="number" id="expected-return" placeholder="Enter expected rate of return">
-
-            <button id="calculate-btn">Calculate</button>
-
-            <div id="result">
-                <h2>Results</h2>
-                <p>Starting Amount: <span id="starting-amount"></span></p>
-                <p>Total Contribution: <span id="total-contribution"></span></p>
-                <p>Total Amount: <span id="total-amount"></span></p>
+        <div id="rows">
+            <div class="input-group">
+                <input type="text" placeholder="Course Name">
+                <input type="number" placeholder="Credits">
+                <select>
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B">B</option>
+                    <option value="B-">B-</option>
+                    <option value="C+">C+</option>
+                    <option value="C">C</option>
+                    <option value="C-">C-</option>
+                    <option value="D+">D+</option>
+                    <option value="D">D</option>
+                    <option value="D-">D-</option>
+                    <option value="F">F</option>
+                    <option value="P">P</option>
+                    <option value="NP">NP</option>
+                </select>
             </div>
         </div>
-    </main>
-
-    <!-- Section: Types of Investing- Plan Your Financial Future -->
-    <section>
-        <h2>Types of Investing- Plan Your Financial Future</h2>
-        <p>  
-            <li>Stock Investing: Purchasing shares of publicly traded companies to gain ownership and potentially profit from their performance in the stock market.</li>
-            <li>Bond Investing: Buying debt securities issued by governments or corporations to receive periodic interest payments and eventual repayment of the principal amount.</li>
-            <li>Real Estate Investing: Acquiring properties with the aim of generating rental income or capital appreciation over time.</li>
-            <li>Mutual Funds: Investing in professionally managed funds that pool money from multiple investors to buy a diversified portfolio of stocks, bonds, or other assets.</li>
-            <li>Exchange-Traded Funds (ETFs): Investing in funds that trade on stock exchanges and aim to replicate the performance of a specific index or sector.</li>
-            <li>Index Funds: Investing in funds that aim to match the performance of a market index, providing broad exposure to a particular market segment.</li>
-            <li>Commodities Investing: Trading physical commodities like gold, oil, or agricultural products to diversify investment portfolios and hedge against inflation.</li>
-            <li>Options Trading: Buying or selling contracts that grant the right, but not the obligation, to buy or sell an underlying asset at a predetermined price.</li>
-            <li>Cryptocurrency Investing: Buying and holding digital currencies like Bitcoin or Ethereum to potentially profit from price appreciation in the cryptocurrency market.</li>
-            <li>Peer-to-Peer Lending: Participating in online platforms to lend money to individuals or businesses, earning interest on the loans provided.</li>
-        </p>
-        <h3>Why It's Important to Invest:</h3>
-        <p>
-            Investing is crucial for securing your financial future and achieving long-term wealth. By utilizing tools like the Investment Calculator and engaging in strategic financial planning, individuals can maximize their investment returns and work towards their financial goals. This includes utilizing compound interest calculators to understand
-            the power of compounding over time and implementing effective retirement planning strategies to ensure a comfortable future.
-        </p>
-   
-
-        </p>
-    </section>
-
-    <section>
-        <h3>How It Works:</h3>
-        <p>
-            Using our Investment Calculator is simple. Just input your initial investment amount, any additional contributions, the number of years you plan to invest, and your expected rate of return. With the click of a button, you'll receive detailed insights into your investment's potential growth and total returns.
-        </p>
-        <h3>Why Use Our Calculator?</h3>
-        <ul>
-            <li>Comprehensive Analysis: Our calculator provides a comprehensive analysis of your investment, including compound interest calculations and projections.</li>
-            <li>Customizable Inputs: Tailor your inputs to match your unique financial situation, whether you're investing monthly, annually, or with a one-time contribution.</li>
-            <li>Plan Your Retirement: Determine how your investments can contribute to a secure retirement by visualizing potential savings growth over time.</li>
-        </ul>
-    </section>
+        <div class="horizontal-line"></div>
+        <button id="add-row">Add Row</button>
+        <button id="calculate">Calculate GPA</button>
+        <div id="result"></div>
+    </div>
     <footer>
-        <p>© 2024 Investment Calculator. All rights reserved.</p>
+        <p>&copy; 2024 GPA Calculator. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="gpa_calculator.js"></script>
 </body>
 </html>
