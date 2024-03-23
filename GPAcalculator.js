@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const addButton = document.getElementById("add-row");
     const calculateButton = document.getElementById("calculate");
     const resultDiv = document.getElementById("result");
-    let rowCount = 5; // Initial number of rows
+    let rowCount = 1; // Initial number of rows
 
     addButton.addEventListener("click", function() {
         addRow();
@@ -94,9 +94,4 @@ document.addEventListener("DOMContentLoaded", function() {
             case "P":
                 return 0.0; // Assuming P represents pass without affecting GPA
             case "NP":
-                return 0.0; // Assuming NP represents no pass without affecting GPA
-            default:
-                return 0.0;
-        }
-    }
-});
+               
