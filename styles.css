@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,90 +6,66 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
-    padding: 20px;
+    color: white;
     text-align: center;
+    padding: 10px 0;
 }
 
-main {
-    padding: 20px;
+.main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .calculator {
-    max-width: 500px;
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    background-color: #f0f0f0;
     padding: 20px;
+    border-radius: 5px;
+    width: 300px;
 }
 
-label {
+.calculator label {
     display: block;
-    margin-bottom: 5px;
-}
-
-input[type="number"],
-button {
-    width: calc(100% - 20px); /* Subtract padding */
-    padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
 }
 
-button {
+.calculator input {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.calculator select {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.calculator button {
     background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#calculate-btn {
-    margin-bottom: 20px; /* Add some space between buttons */
+    margin-top: 10px;
+    width: calc(100% - 20px);
 }
 
 #result {
     margin-top: 20px;
-    padding: 10px;
+}
+
+.investing-info {
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9; /* Light gray background color */
+    background-color: #f9f9f9;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
+    margin-top: 20px;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* GPA Calculator Styles */
-.gpa-calculator {
-    max-width: 500px;
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-}
-
-.gpa-calculator label,
-.gpa-calculator select {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.gpa-calculator select {
-    width: calc(100% - 20px); /* Subtract padding */
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-
-.gpa-calculator button {
-    width: 100%;
+    background-color: #333;
+    color: white;
 }
