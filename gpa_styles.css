@@ -4,24 +4,18 @@ body {
     padding: 0;
 }
 
-.outer-box {
-    width: 70%;
-    margin: 50px auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-}
-
 .container {
-    margin-bottom: 20px;
+    width: 50%;
+    margin: 50px auto;
 }
 
 .table-box {
-    display: flex;
-    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.table-header, .table-row {
+.table-row {
     display: flex;
     border-bottom: 1px solid #ccc;
 }
@@ -40,7 +34,9 @@ body {
 
 button {
     display: block;
-    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -57,9 +53,4 @@ button:hover {
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
 }
